@@ -19,7 +19,6 @@ import java.io.ByteArrayOutputStream;
 @Controller
 public class VerificationCodeController {
 
-
     @Autowired
     DefaultKaptcha defaultKaptcha;
 
@@ -31,8 +30,7 @@ public class VerificationCodeController {
      * @throws Exception
      */
     @RequestMapping("/defaultKaptcha")
-    public void getVerificationCode(HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
+    public void getVerificationCode(HttpServletRequest request, HttpServletResponse response) throws Exception {
         byte[] captchaChallengeAsJpeg = null;
         ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();
         try {
