@@ -1,5 +1,6 @@
 package com.springboot.frame.config;
 
+import com.springboot.frame.constant.Constant;
 import lombok.Data;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
@@ -74,9 +75,9 @@ public class ElasticSearchConfig {
         List<HttpHost> hostLists = new ArrayList<>();
         // 拆分Es 地址
         if (this.address != null) {
-            String[] addressList = this.address.split(",");
+            String[] addressList = this.address.split(Constant.SPLIT_EN_COMMA);
             for (String address : addressList) {
-                String[] hostPortInfo = address.split(":");
+                String[] hostPortInfo = address.split(Constant.SPLIT_EN_COLON);
                 String host = hostPortInfo[0];
                 String port = hostPortInfo[1];
                 hostLists.add(new HttpHost(host, Integer.parseInt(port), schema));
