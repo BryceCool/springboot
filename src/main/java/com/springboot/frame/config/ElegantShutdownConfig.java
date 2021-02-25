@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.embedded.tomcat.TomcatConnectorCustomizer;
 import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.ContextClosedEvent;
 
 import java.util.concurrent.Executor;
@@ -17,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @author yangguanghui6
  * @date 2021/2/21 17:08
  */
+@Configuration
 public class ElegantShutdownConfig implements TomcatConnectorCustomizer, ApplicationListener<ContextClosedEvent> {
 
     private Logger logger = LoggerFactory.getLogger(ElegantShutdownConfig.class);
